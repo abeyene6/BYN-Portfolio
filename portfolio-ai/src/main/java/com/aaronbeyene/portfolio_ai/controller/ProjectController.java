@@ -14,7 +14,9 @@ import jakarta.validation.Valid;
 
 @CrossOrigin(origins = {
     "http://localhost:5173",
-    "https://byn-portfolio.onrender.com"
+    "https://byn-portfolio.onrender.com",
+    "https://bynadeveloper.com",
+    "https://www.bynadeveloper.com"
 })
 @RestController
 @RequestMapping("/projects")
