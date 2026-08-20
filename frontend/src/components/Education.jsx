@@ -384,7 +384,7 @@ function Education() {
 
         const response =
           await fetch(
-            "http://localhost:8080/api/chat",
+            "https://byn-portfolio-api.onrender.com/api/chat",
             {
               method: "POST",
 

@@ -58,7 +58,7 @@ function Projects() {
 
   useEffect(() => {
 
-    fetch("http://localhost:8080/projects")
+    fetch("https://byn-portfolio-api.onrender.com/projects")
       .then((response) => response.json())
       .then((data) => setProjects(data))
       .catch((error) => console.error(error));
