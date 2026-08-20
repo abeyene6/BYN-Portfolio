@@ -6451,3 +6451,883 @@ textarea{
 .project-still.project-media-visible {
   opacity: 1;
 }
+/* ==========================================================
+   BYN — CLEAN MOBILE MASTER
+   Keep this as the LAST block in App.css.
+   Desktop remains untouched.
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+    /* ======================================================
+       GLOBAL
+       ====================================================== */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    section {
+        max-width: 100%;
+    }
+
+
+    /* ======================================================
+       NAVBAR
+       ====================================================== */
+
+    .navbar {
+        height: 64px;
+        padding: 0 20px;
+    }
+
+    .navbar-logo-image {
+        width: 52px;
+        height: 52px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: .78rem;
+    }
+
+
+    /* ======================================================
+       HERO
+       ====================================================== */
+
+    #hero {
+        height: 680px;
+        min-height: 680px;
+        margin-top: 64px;
+        overflow: hidden;
+    }
+
+    .hero-scene {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .hero-workspace {
+        /*
+         * Show the full WIDTH of the artwork instead of
+         * using desktop's background-size: cover.
+         */
+        background-size: auto 100%;
+        background-position: center top;
+        background-repeat: no-repeat;
+    }
+
+    .hero-workspace::after {
+        height: 280px;
+    }
+
+
+    /* ======================================================
+       HERO — BYN BOT
+       ====================================================== */
+
+    .bynbot {
+        left: 50%;
+        bottom: 185px;
+
+        width: min(68vw, 285px);
+
+        transform: translateX(-50%);
+    }
+
+
+    /* ======================================================
+       HERO — CHAT
+       Desktop absolute coordinates cannot survive mobile.
+       ====================================================== */
+
+    .chat-prompt {
+        left: 50%;
+        bottom: 48px;
+
+        width: calc(100% - 36px);
+        max-width: 390px;
+
+        --chat-width: 100%;
+
+        transform: translateX(-50%);
+    }
+
+    .chat-input {
+        left: 0;
+        top: 0;
+
+        width: 100%;
+    }
+
+    .byn-terminal {
+        left: 0;
+        top: 0;
+
+        width: 100%;
+
+        margin-bottom: 12px;
+    }
+
+    .chat-input input {
+        padding: 12px 16px;
+        font-size: .88rem;
+    }
+
+    .chat-input button {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    /* ======================================================
+       PROJECTS
+       Desktop = 3 columns
+       Mobile = horizontal cards
+       ====================================================== */
+
+    #projects {
+        margin-top: 0;
+        padding: 55px 0 85px;
+        overflow: hidden;
+    }
+
+    .projects-title {
+        margin-bottom: 30px;
+        padding: 0 22px;
+    }
+
+    .project-grid {
+        display: flex;
+
+        width: 100%;
+
+        gap: 16px;
+
+        padding: 0 22px 14px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+    }
+
+    .project-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .project-card {
+        flex: 0 0 84vw;
+        max-width: 360px;
+
+        scroll-snap-align: center;
+    }
+
+    .project-image {
+        height: auto;
+        aspect-ratio: 16 / 10;
+    }
+
+    .project-video,
+    .project-still {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+
+    /* Mobile has no meaningful hover.
+       Keep the normal project title visible. */
+
+    .project-card:hover {
+        transform: none;
+    }
+
+    .project-card:hover .project-image {
+        transform: none;
+        filter: none;
+    }
+
+    .project-card:hover .project-title {
+        opacity: 1;
+    }
+
+    .project-overlay {
+        display: none;
+    }
+
+
+    /* ======================================================
+       ABOUT
+       Let the component's existing mobile CSS do most of it.
+       We only remove desktop-style overflow/indent problems.
+       ====================================================== */
+
+    #about {
+        overflow: hidden;
+    }
+
+    .about-card {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-left,
+    .about-right {
+        min-width: 0;
+    }
+
+    .about-left h2 {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+    }
+
+    .about-description,
+    .about-paragraph {
+        max-width: 100%;
+    }
+
+    .about-buttons {
+        flex-wrap: wrap;
+    }
+
+
+    /* ======================================================
+       EDUCATION
+       ====================================================== */
+
+    #education {
+        padding: 75px 22px;
+    }
+
+    .education-terminal {
+        width: 100%;
+    }
+
+    .terminal-header {
+        height: 56px;
+    }
+
+    .terminal-buttons {
+        left: 14px;
+        gap: 7px;
+    }
+
+    .terminal-dot {
+        width: 11px;
+        height: 11px;
+    }
+
+    .terminal-title {
+        font-size: .78rem;
+    }
+
+    .terminal-body {
+        padding: 24px 18px;
+
+        font-size: .78rem;
+        line-height: 1.75;
+
+        overflow-wrap: anywhere;
+    }
+
+    .terminal-key {
+        width: auto;
+        min-width: 0;
+    }
+
+
+    /* ======================================================
+       EXPERIENCE
+       Preserve your existing Experience mobile styling.
+       ====================================================== */
+
+    #experience {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .experience-list {
+        width: 92%;
+        max-width: 100%;
+    }
+
+    .experience-company {
+        min-width: 0;
+    }
+
+    .experience-company p {
+        max-width: 220px;
+    }
+
+
+    /* ======================================================
+       SKILLS
+       Existing marquee remains intact.
+       ====================================================== */
+
+    #skills {
+        padding-top: 75px;
+    }
+
+    .skill-pill {
+        min-width: 180px;
+        padding: 15px 20px;
+    }
+
+    .skills-track {
+        gap: 14px;
+    }
+
+
+    /* ======================================================
+       CONTACT / FINALE
+       Existing CSS already stacks this at tablet/mobile.
+       Only constrain it to the viewport.
+       ====================================================== */
+
+    #contact {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .footer-finale {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .footer-finale-inner {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .footer-finale-message {
+        max-width: 100%;
+    }
+
+    .footer-whats-next,
+    .footer-build-next {
+        max-width: 100%;
+    }
+
+
+    /* ======================================================
+       FOOTER
+       ====================================================== */
+
+    .footer {
+        width: 100%;
+        max-width: 100%;
+
+        text-align: center;
+    }
+
+    .footer-left {
+        white-space: normal;
+    }
+
+}
+/* ==========================================================
+   BYN — MOBILE V1 POLISH
+   iPhone / <= 700px
+   Keep at ABSOLUTE BOTTOM of App.css
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+    /* ======================================================
+       1. HERO TERMINAL + ASK BAR
+       Make BOTH use the exact same width and center line.
+       ====================================================== */
+
+    .chat-prompt {
+        left: 50%;
+        width: calc(100% - 36px);
+        max-width: 390px;
+        transform: translateX(-50%);
+    }
+
+    .byn-terminal,
+    .chat-input {
+        left: 0;
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+    }
+
+    .byn-terminal {
+        transform: none;
+    }
+
+
+    /* ======================================================
+       2. FEATURED PROJECTS
+       Stack all 3 vertically instead of horizontal scrolling.
+       ====================================================== */
+
+    #projects {
+        overflow: visible;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .project-grid {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        max-width: 100%;
+
+        align-items: center;
+
+        gap: 24px;
+
+        padding:
+            0
+            22px
+            20px;
+
+        overflow: visible;
+
+        scroll-snap-type: none;
+    }
+
+    .project-card {
+        flex: none;
+
+        width: 100%;
+        max-width: 360px;
+
+        margin: 0 auto;
+
+        scroll-snap-align: none;
+    }
+
+    .project-image {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        height: auto;
+    }
+
+
+    /* ======================================================
+       RESTORE PROJECT INTERACTION
+
+       Previous V1 block disabled these because we were
+       treating Projects like a horizontal mobile carousel.
+
+       Now the cards are stacked, so let them behave normally.
+       ====================================================== */
+
+    .project-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .project-card:hover .project-image {
+        transform: scale(1.02);
+    }
+
+    .project-overlay {
+        display: flex;
+    }
+
+
+    /* ======================================================
+       3. FINALE
+       Robot + text centered on SAME vertical axis.
+       ====================================================== */
+
+    .footer-finale {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .footer-finale-inner {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+
+        margin: 0 auto;
+    }
+
+    .footer-bynbot {
+        left: auto;
+
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-bynbot img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .footer-finale-message {
+        left: auto;
+        top: auto;
+
+        width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .footer-whats-next {
+        width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        text-align: center;
+    }
+
+    .footer-build-next {
+        width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        text-align: center;
+    }
+
+
+    /* ======================================================
+       4. ACTUAL BOTTOM FOOTER
+       Current screenshot has the three footer areas spread
+       horizontally and cramped. Stack them cleanly.
+       ====================================================== */
+
+    .footer,
+    .footer-bottom {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+
+        gap: 12px;
+
+        padding:
+            22px
+            18px
+            28px;
+
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        margin: 0;
+
+        text-align: center;
+    }
+
+    .footer-left {
+        white-space: normal;
+    }
+
+    .footer-center {
+        flex-wrap: wrap;
+        gap: 8px 10px;
+    }
+
+    .footer-right {
+        gap: 10px;
+    }
+
+}
+/* ==========================================================
+   BYN — MOBILE FINAL PATCH
+   Keep this at the ABSOLUTE BOTTOM of App.css
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+    /* ======================================================
+       HERO CHAT
+       Terminal + input exactly same width.
+       Keep send button INSIDE viewport.
+       ====================================================== */
+
+    .chat-prompt {
+        left: 50%;
+        width: calc(100% - 36px);
+        max-width: 390px;
+
+        --chat-width: 100%;
+
+        transform: translateX(-50%);
+        box-sizing: border-box;
+    }
+
+    .byn-terminal,
+    .chat-input {
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .byn-terminal {
+        transform: none;
+    }
+
+    .chat-input {
+        display: flex;
+        align-items: center;
+
+        padding-left: 0;
+        padding-right: 5px;
+
+        overflow: hidden;
+    }
+
+    .chat-input input {
+        flex: 1 1 auto;
+        width: 0;
+        min-width: 0;
+
+        padding-left: 16px;
+        padding-right: 8px;
+    }
+
+    .chat-input button {
+        flex: 0 0 40px;
+
+        width: 40px;
+        height: 40px;
+
+        margin: 0;
+    }
+
+
+    /* ======================================================
+       FEATURED PROJECTS
+       FORCE all returned cards into vertical stack.
+       No carousel / no horizontal clipping.
+       ====================================================== */
+
+    #projects {
+        width: 100%;
+        overflow: visible;
+
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .projects-title {
+        width: 100%;
+        text-align: center;
+    }
+
+    .project-grid {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        width: 100%;
+        max-width: 100%;
+
+        gap: 24px;
+
+        padding: 0 22px 20px;
+
+        overflow: visible;
+
+        scroll-snap-type: none;
+    }
+
+    .project-card {
+        display: block;
+
+        flex: 0 0 auto;
+
+        width: 100%;
+        max-width: 360px;
+
+        margin: 0 auto;
+
+        scroll-snap-align: none;
+    }
+
+    .project-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 10;
+
+        overflow: hidden;
+    }
+
+    .project-video,
+    .project-still {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+
+    /* ======================================================
+       FINALE
+       Center robot + What Now?
+       ====================================================== */
+
+    .footer-finale {
+        width: 100%;
+
+        padding-left: 22px;
+        padding-right: 22px;
+
+        box-sizing: border-box;
+    }
+
+    .footer-finale-inner {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-bynbot {
+        left: auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-bynbot img {
+        display: block;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-finale-message {
+        left: auto;
+        top: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        text-align: center;
+    }
+
+    .footer-whats-next,
+    .footer-build-next {
+        width: 100%;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        text-align: center;
+    }
+
+
+    /* ======================================================
+       ACTUAL BOTTOM FOOTER
+       ====================================================== */
+
+    .footer,
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+
+        gap: 12px;
+
+        padding: 22px 18px 28px;
+
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        text-align: center;
+    }
+
+    .footer-left {
+        white-space: normal;
+    }
+
+    .footer-center {
+        flex-wrap: wrap;
+    }
+}
