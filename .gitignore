@@ -1,0 +1,60 @@
+# =========================
+# SECRETS / ENVIRONMENT
+# =========================
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# =========================
+# MACOS
+# =========================
+.DS_Store
+**/.DS_Store
+
+# =========================
+# FRONTEND / NODE / VITE
+# =========================
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.vite/
+**/.vite/
+
+# =========================
+# JAVA / MAVEN / SPRING
+# =========================
+target/
+**/target/
+*.class
+*.jar
+
+# =========================
+# IDE
+# =========================
+.idea/
+**/.idea/
+.vscode/
+**/.vscode/
+*.iml
+
+# =========================
+# LOGS / TEMP
+# =========================
+*.log
+logs/
+tmp/
+temp/
+
+# =========================
+# LOCAL SECRET CONFIG
+# =========================
+application-local.properties
+application-local.yml
+application-local.yaml
+**/application-local.properties
+**/application-local.yml
+**/application-local.yaml
