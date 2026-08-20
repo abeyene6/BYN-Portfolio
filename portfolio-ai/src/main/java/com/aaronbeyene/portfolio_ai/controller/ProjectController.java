@@ -12,7 +12,10 @@ import com.aaronbeyene.portfolio_ai.service.interfaces.IProjectService;
 
 import jakarta.validation.Valid;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://byn-portfolio.onrender.com"
+})
 @RestController
 @RequestMapping("/projects")
 public class ProjectController {
